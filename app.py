@@ -11,6 +11,8 @@ app = Flask(__name__)
 app.secret_key = 'rufa'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False
+app.config['PROPAGATE_EXCEPTIONS'] = True
+
 api = Api(app)
 jwt = JWT(app, authenticate, identity)
 
